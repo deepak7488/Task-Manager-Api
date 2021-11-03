@@ -2,7 +2,7 @@
  const app = express();
  const userRouter = require('./routers/users')
  const taskRouter = require('./routers/tasks')
- const port = process.env.port;
+ const port = process.env.PORT;
  const { findByIdAndUpdate, findByIdAndDelete } = require('./models/user');
  app.use(express.json()) //automaticaly changes to req to json
      //  app.use((req, res, next) => {
