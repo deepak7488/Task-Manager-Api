@@ -103,8 +103,8 @@ userSchema.pre('save', async function(next) {
     const user = this
     if (user.isModified('password')) {
         user.password = await bcrypt.hash(user.password, 8);
-        console.log("Password Hassed Succesfuly!")
-            // next()
+        // console.log("Password Hassed Succesfuly!")
+        // next()
     }
     // console.log(await bcrypt.compare('deepak@2001', user.password))
     next()

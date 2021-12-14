@@ -51,7 +51,7 @@ router.post('/users/logoutAll', auth, async(req, res) => {
 })
 router.get('/users/me', auth, async(req, res) => {
     try {
-        res.send(req.user)
+        res.send({ user: req.user })
     } catch (e) {
         res.send(e)
     }
@@ -97,7 +97,7 @@ router.delete('/users/me', auth, async(req, res) => {
         // if (!user) {
         //     return res.status(404).send("User not find to delete")
         // }
-        res.send(req.user)
+        res.send({ user: req.user })
     } catch (e) {
         res.status(500).send(e)
     }
